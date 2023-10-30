@@ -1,23 +1,28 @@
-// TODO: Add the required header
+// Sean Young
+// younggseann16@csu.fullerton.edu
+// @1SeanYoung
+// Partners: @print-benjamin
 
 #include <iostream>
 #include <string>
 #include <vector>
+using namespace std;
 
 int main(int argc, char* argv[]) {
   std::vector<std::string> arguments{argv, argv + argc};
 
-  // TODO: Validate that the number of arguments is correct.
-  // If not, print an error message and return a non-zero value.
+  if (arguments.size() != 4) {
+    cout << "error: you must supply three arguments\n";
+    return 1;
+  }
 
-  // TODO: Declare three std::string variables to hold the
-  // protein, bread, and condiment input.
-  // Initialize each variable with an element of the arguments vector
-  // declared above.
+  string protein(arguments.at(1));
+  string bread(arguments.at(2));
+  string condiment(arguments.at(3));
 
-  // TODO: Use cout to print output following the pattern
-  // Your order: A *PROTEIN* sandwich on *BREAD* with *CONDIMENT*.
-  // on its own line.
+  cout << "Your order:\n";
 
+  cout << "A " << protein << " sandwich on " << bread << " with " << condiment
+       << "." << '\n';
   return 0;
 }
