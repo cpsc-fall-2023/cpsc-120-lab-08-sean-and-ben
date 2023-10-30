@@ -16,14 +16,18 @@ int main(int argc, char* argv[]) {
     return 1;
   }
 
+  bool zero{true};
   double sum{0.0};
 
-  for (int i = 1; i < arguments.size(); i++) {
-    sum += stod(arguments[i]);
+  for (string& argue : arguments) {
+    if (zero) {
+      zero = false;
+      continue;
+    }
+    sum += stod(argue);
   }
 
-  double average =
-      static_cast<double>(sum) / static_cast<double>(arguments.size() - 1);
+  double average = sum / static_cast<double>(arguments.size() - 1);
 
   cout << "average = " << average << "\n";
 
